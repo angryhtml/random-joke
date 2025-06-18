@@ -2,14 +2,14 @@ html {
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+    background: linear-gradient(135deg, #edddff 0%, #fcaeb9 100%);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .container {
-    background-color: white; 
+    background-color: rgba(255, 255, 255, 0.504); 
     border-radius: 1.5rem;
     padding: 2rem;
     width: 100%;
@@ -37,15 +37,17 @@ html {
 }
 
 button {
+    width: 80%;
     color: white;
-    border-radius: 1px;
+    border: none;
+    border-radius: 1.1rem !important;
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #ff3f5e;
+    background-color: #e2d2f5;
     transform: scale(1.05);
     cursor: pointer;
 }

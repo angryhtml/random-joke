@@ -19,8 +19,13 @@ const addNewJoke = async () => {
 const getJoke = async () => {
     try {
         const res = await axios.get('https://v2.jokeapi.dev/joke/Programming');
-        console.log(res.data.joke);
-        return res.data.joke;
+        if (res.data.type === "single") {
+            return res.data.joke;
+        } else if (res.data.type === "twopart") {
+            return `${res.data.setup} 🤔\n${res.data.delivery}`;
+        } else {
+            return "Failed to get the joke 😢";
+        }
     }
     catch (e) {
         console.error('Error:', e.message);
