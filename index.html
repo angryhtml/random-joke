@@ -14,16 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-      <div class="columns is-vcentered is-centered">
-        <div class="column">
-          <p>Click the&nbsp;button to&nbsp;generate a&nbsp;programming&nbsp;joke&nbsp;🤓</p>
-          <button class="button is-light" type="submit">Get a New Joke</button>
-          <p id="generated-joke"></p>
-        </div>
+  <div id="toast" class="toast"></div>
+  <div class="container">
+    <div class="columns is-vcentered is-centered">
+      <div class="column">
+        <p>Click the&nbsp;button to&nbsp;generate a&nbsp;programming&nbsp;joke&nbsp;🤓</p>
+        <button class="button is-light" type="submit">Get a New Joke</button>
+        <p id="generated-joke"></p>
+        <button id="share-button" class="button is-info" style="margin-top: 1rem; display: none;">Share</button>
       </div>
-      
     </div>
-  </body>
+  </div>
+  
 </body>
 </html>
