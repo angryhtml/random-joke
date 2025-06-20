@@ -50,6 +50,7 @@ function showToast(message) {
 }
 
 button.addEventListener('click', addNewJoke);
+
 shareButton.addEventListener('click', () => {
     const jokeText = jokeParagraph.textContent;
 
@@ -58,7 +59,8 @@ shareButton.addEventListener('click', () => {
         return;
     }
 
-    const encodedJoke = encodeURIComponent(jokeText);
+    const jokeForUrl = jokeText.replace(/\n/g, '\\n');
+    const encodedJoke = encodeURIComponent(jokeForUrl);
     const shareUrl = `${window.location.origin}${window.location.pathname}?joke=${encodedJoke}`;
 
     navigator.clipboard.writeText(shareUrl)
@@ -71,12 +73,12 @@ shareButton.addEventListener('click', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
     const jokeFromUrl = params.get('joke');
 
     if (jokeFromUrl) {
-        const jokeForUrl =jokeText.replace(/\\n/g, '\n');
-        const decodedJoke = decodeURIComponent(jokeForUrl).replace(/\\n/g, '\n');
+        const decodedJoke = decodeURIComponent(jokeFromUrl).replace(/\\n/g, '\n');
         jokeParagraph.textContent = decodedJoke;
         shareButton.style.display = 'inline-block';
     }
-})
+});
