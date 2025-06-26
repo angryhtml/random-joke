@@ -7,11 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import axios from 'axios';
 const button = document.querySelector('button');
 const jokeParagraph = document.querySelector('#generated-joke');
 const shareButton = document.querySelector('#share-button');
-const addNewJoke = () => __awaiter(void 0, void 0, void 0, function* () {
+const addNewJoke = () => __awaiter(this, void 0, void 0, function* () {
     try {
         jokeParagraph.classList.add('fade-out');
         yield new Promise(resolve => setTimeout(resolve, 500));
@@ -34,7 +33,7 @@ const addNewJoke = () => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
-const getJoke = () => __awaiter(void 0, void 0, void 0, function* () {
+const getJoke = () => __awaiter(this, void 0, void 0, function* () {
     try {
         const res = yield axios.get('https://v2.jokeapi.dev/joke/Programming');
         if (res.data.type === "single") {

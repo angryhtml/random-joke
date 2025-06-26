@@ -1,4 +1,4 @@
-import axios from 'axios';
+declare const axios: any;
 const button = document.querySelector('button') as HTMLButtonElement;
 const jokeParagraph = document.querySelector('#generated-joke') as HTMLParagraphElement;
 const shareButton = document.querySelector('#share-button') as HTMLButtonElement;
