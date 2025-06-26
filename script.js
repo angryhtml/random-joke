@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,11 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
+import axios from 'axios';
 const button = document.querySelector('button');
 const jokeParagraph = document.querySelector('#generated-joke');
 const shareButton = document.querySelector('#share-button');
@@ -41,7 +36,7 @@ const addNewJoke = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 const getJoke = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const res = yield axios_1.default.get('https://v2.jokeapi.dev/joke/Programming');
+        const res = yield axios.get('https://v2.jokeapi.dev/joke/Programming');
         if (res.data.type === "single") {
             return res.data.joke;
         }
